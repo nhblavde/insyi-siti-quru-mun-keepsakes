@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#fdf5e5">
+<title>Our Keepsakes ♡</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Special+Elite&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#fdf5e5;--navy:#2a3d63;--navy-soft:rgba(42,61,99,.12);--navy-faint:rgba(42,61,99,.06);box-sizing:border-box}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:86px}
+body{margin:0;background:var(--cream);color:var(--navy);font-family:'Special Elite','Courier New',monospace;line-height:1.6;min-height:100vh;background-image:radial-gradient(var(--navy-soft) 1px,transparent 1px);background-size:22px 22px}
+a{color:inherit;text-decoration:none}button,input,textarea{font:inherit;color:inherit}
+.wrap{width:min(1100px,calc(100% - 32px));margin-inline:auto}
+nav{position:sticky;top:0;z-index:20;background:rgba(253,245,229,.96);border-bottom:2px solid var(--navy);backdrop-filter:blur(10px)}
+.nav-inner{min-height:68px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.brand{font-family:'Caveat',cursive;font-size:2rem;font-weight:700;white-space:nowrap}.brand span{text-decoration:none}
+.nav-links{display:flex;align-items:center;justify-content:flex-end;gap:8px;flex-wrap:wrap}
+.nav-links a{font-family:'Caveat',cursive;font-weight:700;font-size:1.3rem;padding:3px 13px 5px;border:1.5px solid var(--navy);border-radius:4px 13px 4px 13px;transform:rotate(-.8deg);transition:.2s}
+.nav-links a:nth-child(even){transform:rotate(1deg)}.nav-links a:hover,.nav-links a[aria-current=page]{background:var(--navy);color:var(--cream)}
+.hero{padding:clamp(48px,9vw,100px) 0 64px;text-align:center}
+.eyebrow{font-size:.76rem;text-transform:uppercase;letter-spacing:.18em;font-weight:bold}
+.hero h1{font:700 clamp(3.2rem,9vw,6.5rem)/.98 'Caveat',cursive;margin:16px 0 12px}
+.hero h1 em{text-decoration:none;font-style:normal}
+.hero p{max-width:580px;margin:0 auto;font-size:1rem}
+.hero-ornament{font:2rem 'Caveat',cursive;margin-top:22px}
+main{padding-bottom:55px}.view{display:none;animation:appear .3s ease}.view.on{display:block}
+@keyframes appear{from{opacity:.3;transform:translateY(7px)}to{opacity:1;transform:none}}
+.section-head{text-align:center;margin:10px auto 32px}.section-head .eyebrow{margin-bottom:8px}
+h2{font:700 clamp(2.5rem,6vw,4rem)/1.05 'Caveat',cursive;margin:0 0 8px;text-align:center}
+.section-head p,.sub{max-width:55ch;margin:0 auto;text-align:center}
+.friends{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px 22px;padding:12px 4px 25px}
+.pol{background:var(--cream);border:2px solid var(--navy);padding:12px;position:relative;box-shadow:5px 6px 0 var(--navy-soft);transform:rotate(var(--r,-1.8deg))}
+.pol:nth-child(even){--r:2deg}.pol:nth-child(3n){--r:-2.5deg}
+.pol:before{content:"";position:absolute;top:-13px;left:50%;width:84px;height:24px;transform:translateX(-50%) rotate(-3deg);background:repeating-linear-gradient(45deg,var(--navy) 0 6px,var(--cream) 6px 8px);opacity:.82;z-index:2}
+.friend{text-align:center}.portrait{height:190px;display:grid;place-items:center;overflow:hidden;border:2px dashed var(--navy);background:var(--navy-faint)}
+.portrait img{width:100%;height:100%;object-fit:cover}.initial{font:4rem 'Caveat',cursive}
+.friend h3{font:700 2rem/1 'Caveat',cursive;margin:13px 0 2px}.friend p{font-size:.82rem;margin:4px 0 12px}
+.actions{display:flex;gap:6px;justify-content:center;flex-wrap:wrap}
+.button,.btn{display:inline-block;border:2px solid var(--navy);background:var(--navy);color:var(--cream);padding:6px 14px;border-radius:4px 13px 4px 13px;font:700 1.2rem 'Caveat',cursive;cursor:pointer;transition:.2s}
+.button:hover,.btn:hover{background:var(--cream);color:var(--navy)}.button.soft{background:var(--cream);color:var(--navy)}.button.danger{background:var(--cream);color:var(--navy);border-style:dashed}
+.button.small{font-size:1rem;padding:3px 10px}.button input{display:none}
+.gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:30px 24px;padding:12px 5px}
+.memory{margin:0;padding:12px 12px 10px;transform:rotate(var(--r,1.4deg))}.memory:nth-child(3n){--r:-2deg}.memory:nth-child(4n){--r:2.2deg}
+.memory img{display:block;width:100%;height:235px;object-fit:cover;border:2px dashed var(--navy);background:var(--navy-faint)}
+.memory figcaption{text-align:center;font:1.5rem 'Caveat',cursive;padding:7px 0 2px;overflow-wrap:anywhere}
+.memory-actions{display:flex;justify-content:center;margin-top:5px}
+.upload-card{display:block;max-width:540px;margin:0 auto 25px;padding:22px;border:2px dashed var(--navy);background:var(--navy-faint);text-align:center;cursor:pointer}
+.upload-card strong{display:block;font:700 1.7rem 'Caveat',cursive}.upload-card input{display:none}
+.card{max-width:780px;margin:20px auto 0;background:var(--cream);border:3px solid var(--navy);padding:10px;position:relative;box-shadow:8px 9px 0 var(--navy-soft);transform:rotate(-.5deg)}
+.card-in{border:1.5px solid var(--navy);padding:38px clamp(18px,5vw,42px) 34px;outline:1.5px dashed var(--navy);outline-offset:-8px;position:relative}
+.stamp{position:absolute;top:16px;right:16px;width:62px;height:74px;border:2px dashed var(--navy);display:flex;align-items:center;justify-content:center;font-size:.7rem;line-height:1.1;transform:rotate(5deg);padding:4px;text-align:center}
+.orn{text-align:center;letter-spacing:.6em;font-size:1.1rem}.letter-title{font:700 clamp(2.6rem,7vw,3.7rem)/1.05 'Caveat',cursive;text-align:center;margin:24px 0}
+.wish-copy{max-width:60ch;margin:0 auto}.wish-copy p{font-size:.94rem;margin:0 0 17px;text-align:left}
+.signature2{font:700 2rem 'Caveat',cursive;text-align:left;margin:12px auto 22px;max-width:60ch}
+.signature{font:700 2rem 'Caveat',cursive;text-align:right;margin:24px auto 0;max-width:60ch;line-height:1.2}
+.seal{width:72px;height:72px;border-radius:50%;background:var(--navy);color:var(--cream);display:grid;place-items:center;margin:24px auto 0;font:2.3rem 'Caveat',cursive;box-shadow:0 0 0 5px var(--navy-soft),inset 0 0 0 4px var(--cream),inset 0 0 0 6px var(--navy)}
+.guestbook{max-width:850px;margin:0 auto}.form{padding:20px;margin:18px auto 28px;max-width:760px}
+.form-grid{display:grid;grid-template-columns:1fr 2fr;gap:12px}
+.field{width:100%;border:2px solid var(--navy);background:var(--cream);padding:10px 12px;border-radius:3px;font:inherit}
+.field:focus{outline:3px solid var(--navy-soft);outline-offset:2px}textarea.field{min-height:105px;resize:vertical}
+.form-actions{display:flex;justify-content:flex-end;margin-top:12px}.message-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:28px 22px;padding:12px 5px}
+.note{padding:23px 17px 15px;position:relative;box-shadow:5px 6px 0 var(--navy-soft);transform:rotate(var(--r,1.4deg))}
+.note:nth-child(even){--r:-1.8deg}.note:nth-child(3n){--r:2deg}.note:before{content:"";position:absolute;top:-11px;left:50%;width:72px;height:22px;transform:translateX(-50%) rotate(2deg);background:repeating-linear-gradient(45deg,var(--navy) 0 6px,var(--cream) 6px 8px)}
+.note p{white-space:pre-wrap;overflow-wrap:anywhere;margin:0 0 12px;font-size:.9rem}.note b{display:block;text-align:right;font:700 1.5rem 'Caveat',cursive}
+.note-meta{font-size:.7rem;text-align:right;margin-top:7px;opacity:.75}.note-actions{display:flex;gap:6px;margin-top:8px;justify-content:flex-end}
+.status{text-align:center;min-height:24px;margin:10px auto 18px;font-size:.82rem;max-width:70ch}.status.error{font-weight:bold}.status.ok{font-weight:bold}
+.empty{text-align:center;padding:25px;border:2px dashed var(--navy);background:var(--navy-faint);grid-column:1/-1}
+footer{text-align:center;padding:22px 12px 34px;font:1.4rem 'Caveat',cursive}
+.modal-backdrop{position:fixed;inset:0;background:rgba(42,61,99,.78);display:none;place-items:center;padding:18px;z-index:50}.modal-backdrop.open{display:grid}
+.modal{width:min(480px,100%);padding:24px;background:var(--cream);border:3px solid var(--navy);box-shadow:8px 9px 0 var(--navy-soft)}
+.modal h3{font:700 2rem 'Caveat',cursive;margin:0 0 12px}.modal-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:12px}
+@media(max-width:800px){.nav-inner{padding:9px 0;flex-wrap:wrap;justify-content:center}.nav-links{width:100%;justify-content:center}.friends{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{padding:52px 0 45px}.gallery{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:520px){.wrap{width:calc(100% - 24px)}.brand{font-size:1.8rem}.nav-links{gap:5px}.nav-links a{font-size:1.13rem;padding:2px 8px}.friends{gap:25px 14px}.portrait{height:145px}.gallery{gap:24px 12px}.memory{padding:8px}.memory img{height:155px}.form-grid{grid-template-columns:1fr}.card-in{padding:38px 17px 28px}.stamp{width:48px;height:58px;font-size:.62rem}.wish-copy p{font-size:.88rem}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<nav aria-label="Main navigation">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#home">Our <span>Keepsakes</span> ♡</a>
+    <div class="nav-links">
+      <a href="#about">About Us</a><a href="#memories">Our Memories</a><a href="#wish">My Wish</a><a href="#messages">Leave a Message</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero wrap view on" id="v-home" aria-labelledby="home-title">
+  <div class="eyebrow">A little place for a lifetime of memories</div>
+  <h1 id="home-title">Our <em>Keepsakes</em></h1>
+  <p>Four friends, one scrapbook, and a lot of stories we never want to forget.</p>
+  <div class="hero-ornament">made of friendship, laughter &amp; little moments ✿</div>
+</section>
+
+<main class="wrap">
+<section class="view" id="v-about">
+  <div class="section-head"><div class="eyebrow">The people behind the memories</div><h2>About Us</h2><p>Different personalities, one very special friendship.</p></div>
+  <div class="friends">
+    <article class="pol friend"><div class="portrait" id="portrait-insyi"><span class="initial">I</span></div><h3>Insyi</h3><p>The one who remembers every date.</p><div class="actions"><label class="button soft small">Add photo<input type="file" accept="image/*" onchange="uploadProfile('insyi',this)"></label><button class="button danger small" type="button" onclick="deleteProfile('insyi')">Remove</button></div></article>
+    <article class="pol friend"><div class="portrait" id="portrait-siti"><span class="initial">S</span></div><h3>Siti</h3><p>The heart of our little circle.</p><div class="actions"><label class="button soft small">Add photo<input type="file" accept="image/*" onchange="uploadProfile('siti',this)"></label><button class="button danger small" type="button" onclick="deleteProfile('siti')">Remove</button></div></article>
+    <article class="pol friend"><div class="portrait" id="portrait-quru"><span class="initial">Q</span></div><h3>Quru</h3><p>The one who makes everyone laugh.</p><div class="actions"><label class="button soft small">Add photo<input type="file" accept="image/*" onchange="uploadProfile('quru',this)"></label><button class="button danger small" type="button" onclick="deleteProfile('quru')">Remove</button></div></article>
+    <article class="pol friend"><div class="portrait" id="portrait-mun"><span class="initial">M</span></div><h3>Mun</h3><p>The calm and caring one.</p><div class="actions"><label class="button soft small">Add photo<input type="file" accept="image/*" onchange="uploadProfile('mun',this)"></label><button class="button danger small" type="button" onclick="deleteProfile('mun')">Remove</button></div></article>
+  </div>
+  <p id="profile-status" class="status"></p>
+</section>
+
+<section class="view" id="v-memories">
+  <div class="section-head"><div class="eyebrow">Little moments, forever kept</div><h2>Our Memories</h2><p>Add your favourite photos to our shared collection.</p></div>
+  <label class="upload-card"><strong>＋ Add your photos</strong><span>Choose one or more images from your device</span><input id="photo-input" type="file" accept="image/*" multiple onchange="uploadMemories(this)"></label>
+  <p id="gallery-status" class="status"></p>
+  <div class="gallery" id="gallery"><div class="empty">Our photo collection is waiting for its first memory. ♡</div></div>
+</section>
+
+<section class="view" id="v-wish">
+  <div class="card"><div class="card-in">
+    <div class="stamp">A LITTLE<br>NOTE<br>♥</div><div class="orn" aria-hidden="true">❦ ✿ ❦</div>
+    <h2 class="letter-title">My Wish</h2>
+    <div class="wish-copy">
+      <p class="signature2">Teruntuk,<br>Siti, Quru, and Mun ♥</p>
+      <p>I know this might be a little late, but I just want to wish all of you a very Happy Graduation! Tahniah korang sebab dah berjaya habiskan perjalanan degree selama empat tahun ni. I know it wasn’t easy, and honestly, sometimes I think kita salah pilih course HAHAHA. Maybe this wasn’t really the course we expected, but despite all the challenges, you guys made it through. And I’m genuinely proud of all of us!</p>
+      <p>First of all, I just want to say thank you for being my friends since day one. I still remember how we first got to know each other, duduk satu row masa kelas Dr.Salwani kut yang Programming Techniques. Who would have thought that the friendship would grow this far? And I think our bond became even stronger after we joined PALAPES.</p>
+      <p>Through PALAPES, we’ve been through so much together. Ada gaduh, ada manis, ada pahit, ada busuk, ada wangi HAHAHA. We’ve seen different sides of each other, gone through difficult moments and created so many memories along the way. But one thing I’m really thankful for is that no matter what happened, you guys never made me feel left out. Thank you for accepting me, putting up with my perangai and being the kind of friends I could always count on.</p>
+      <p>I’m sorry if throughout our friendship, ada kata-kata, perbuatan or gurauan saya yang pernah menyakitkan hati korang, sama ada saya sedar atau tak. I hope there’s no hard feelings between us.</p>
+      <p>As we move on to a new chapter in life, I genuinely pray that Allah will always ease our affairs, open the best opportunities for us and grant us success in everything we do, dunia dan akhirat. Semoga apa yang kita impikan selama ni satu per satu tercapai.</p>
+      <p>Thank you for being part of my university journey. I’m really grateful that our paths crossed, and I hope this isn’t where our friendship ends. Lepas ni mungkin masing-masing akan sibuk dengan kehidupan sendiri, but please don’t be a stranger.</p>
+      <p>So, see you guys when I see you. Take care, keep in touch and don’t forget me okay! Love you guys! 🥹❤️</p>
+    </div>
+    <div class="signature">With Love,<br>Insyi ♥</div><div class="seal" aria-hidden="true">♥</div>
+  </div></div>
+</section>
+
+<section class="view" id="v-messages">
+  <div class="section-head"><div class="eyebrow">Leave a little piece of you</div><h2>Leave a Message</h2><p>Friends, leave your own note on the wall. You can edit or remove messages anytime.</p></div>
+  <div class="guestbook">
+    <form class="form pol" id="message-form">
+      <div class="form-grid"><input class="field" id="message-name" maxlength="50" placeholder="Your name" autocomplete="name" required><textarea class="field" id="message-text" maxlength="1000" placeholder="Write your message..." required></textarea></div>
+      <div class="form-actions"><button class="btn" type="submit" id="message-submit">Pin my note ♡</button></div>
+      <p id="message-status" class="status" aria-live="polite"></p>
+    </form>
+    <div id="messages-list" class="message-list"><div class="empty">Connecting to our message wall…</div></div>
+  </div>
+</section>
+</main>
+<footer>Made with love, for our little circle ♥</footer>
+
+<div class="modal-backdrop" id="edit-modal" role="dialog" aria-modal="true" aria-labelledby="edit-title">
+  <div class="modal"><h3 id="edit-title">Edit your note</h3><input class="field" id="edit-name" maxlength="50" placeholder="Your name"><textarea class="field" id="edit-text" maxlength="1000" style="margin-top:10px" placeholder="Your message"></textarea><div class="modal-actions"><button class="button soft" type="button" onclick="closeEdit()">Cancel</button><button class="button" type="button" onclick="saveEdit()">Save changes</button></div></div>
+</div>
+
+<script>
+(() => {
+  const pages = ['home','about','memories','wish','messages'];
+  function showPage() {
+    let page = (location.hash || '#home').slice(1);
+    if (!pages.includes(page)) page = 'home';
+    pages.forEach(name => {
+      const view = document.getElementById('v-' + name);
+      if (view) view.classList.toggle('on', name === page);
+    });
+    document.querySelectorAll('.nav-links a').forEach(a => {
+      if (a.getAttribute('href') === '#' + page) a.setAttribute('aria-current','page');
+      else a.removeAttribute('aria-current');
+    });
+    window.scrollTo(0,0);
+  }
+  window.addEventListener('hashchange', showPage);
+  document.querySelector('.brand').addEventListener('click', () => setTimeout(showPage,0));
+  showPage();
+})();
+</script>
+
+<script>
+/* 1) Deploy Code.gs as a Google Apps Script Web App.
+   2) Paste its /exec URL below. */
+const API_URL = 'https://script.google.com/macros/s/AKfycbzNaZ4Mj50TbREgb_df982RD6hGz30NjackKuR1iGTu2lssoUZpj4FXpA1RUOxeBh8IhA/exec';
+const API_READY = /^https:\/\/script\.google\.com\/macros\/s\/.+\/exec$/.test(API_URL);
+const $ = id => document.getElementById(id);
+let currentData = {messages:[],photos:[],profiles:{}};
+let editingId = null;
+
+function setStatus(id,message,type=''){const el=$(id);if(el){el.textContent=message;el.className='status '+type;}}
+const escapeHTML = value => String(value ?? '').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function dateLabel(value){try{return value?new Date(value).toLocaleString():'Just now';}catch{return 'Just now';}}
+function requireAPI(){
+  if(API_READY)return true;
+  const msg='Backend setup required: deploy the included Code.gs as a Google Apps Script Web App, then paste its /exec URL into index.html.';
+  ['gallery-status','message-status','profile-status'].forEach(id=>setStatus(id,msg,'error'));
+  return false;
+}
+function getData(){
+  return new Promise((resolve,reject)=>{
+    if(!requireAPI()){reject(new Error('Google Apps Script is not connected.'));return;}
+    const callback='__keepsakes_'+Date.now()+'_'+Math.random().toString(36).slice(2);
+    const script=document.createElement('script');
+    const timer=setTimeout(()=>{cleanup();reject(new Error('The shared scrapbook did not respond. Check the Apps Script deployment and access settings.'));},20000);
+    function cleanup(){clearTimeout(timer);delete window[callback];script.remove();}
+    window[callback]=data=>{cleanup();if(!data||!data.ok)reject(new Error(data?.error||'Could not load shared content.'));else resolve(data);};
+    script.onerror=()=>{cleanup();reject(new Error('Could not connect to Google Apps Script. Check the web app URL and deployment access.'));};
+    script.src=API_URL+'?action=list&callback='+encodeURIComponent(callback)+'&_='+Date.now();
+    document.body.appendChild(script);
+  });
+}
+function renderGallery(){
+  const el=$('gallery'),photos=currentData.photos||[];
+  if(!photos.length){el.innerHTML='<div class="empty">Our photo collection is waiting for its first memory. ♡</div>';return;}
+  el.innerHTML=photos.map(x=>`<figure class="pol memory"><img loading="lazy" src="${escapeHTML(x.url)}" alt="${escapeHTML(x.name||'Shared memory')}"><figcaption>${escapeHTML(x.name||'A little memory')}</figcaption><div class="memory-actions"><button class="button danger small" type="button" data-delete-memory="${escapeHTML(x.id)}">Remove photo</button></div></figure>`).join('');
+  el.querySelectorAll('[data-delete-memory]').forEach(b=>b.addEventListener('click',()=>deleteMemory(b.dataset.deleteMemory)));
+}
+function renderProfiles(){
+  ['insyi','siti','quru','mun'].forEach(key=>{
+    const el=$('portrait-'+key),profile=currentData.profiles?.[key];
+    el.innerHTML=profile?.url?`<img src="${escapeHTML(profile.url)}" alt="${key}">`:`<span class="initial">${key[0].toUpperCase()}</span>`;
+  });
+}
+function renderMessages(){
+  const el=$('messages-list'),messages=currentData.messages||[];
+  if(!messages.length){el.innerHTML='<div class="empty">No notes yet. Be the first to leave one! ♡</div>';return;}
+  el.innerHTML=messages.map(x=>`<article class="pol note"><p>${escapeHTML(x.message)}</p><b>${escapeHTML(x.name)}</b><div class="note-meta">${escapeHTML(dateLabel(x.createdAt))}</div><div class="note-actions"><button class="button soft small" type="button" data-edit="${escapeHTML(x.id)}">Edit</button><button class="button danger small" type="button" data-delete-message="${escapeHTML(x.id)}">Delete</button></div></article>`).join('');
+  el.querySelectorAll('[data-edit]').forEach(b=>b.addEventListener('click',()=>{const item=messages.find(x=>x.id===b.dataset.edit);if(item)openEdit(item.id,item);}));
+  el.querySelectorAll('[data-delete-message]').forEach(b=>b.addEventListener('click',()=>deleteMessage(b.dataset.deleteMessage)));
+}
+async function refreshData(showError=true){
+  try{currentData=await getData();renderGallery();renderProfiles();renderMessages();return currentData;}
+  catch(e){if(showError){setStatus('gallery-status',e.message,'error');setStatus('message-status',e.message,'error');$('messages-list').innerHTML='<div class="empty">The shared message wall could not be loaded. Please refresh later.</div>';}throw e;}
+}
+function actionApplied(payload,before,after){
+  switch(payload.action){
+    case 'uploadMemory':return after.photos.length>before.photos.length;
+    case 'uploadProfile':return !!after.profiles?.[payload.key]?.url&&after.profiles[payload.key].url!==before.profiles?.[payload.key]?.url;
+    case 'deleteMemory':return !after.photos.some(x=>x.id===payload.id);
+    case 'deleteProfile':return !after.profiles?.[payload.key];
+    case 'addMessage':return after.messages.length>before.messages.length;
+    case 'updateMessage':return after.messages.some(x=>x.id===payload.id&&x.name===payload.name&&x.message===payload.message);
+    case 'deleteMessage':return !after.messages.some(x=>x.id===payload.id);
+    default:return true;
+  }
+}
+async function postData(payload){
+  if(!requireAPI())throw new Error('Google Apps Script is not connected.');
+  const before={messages:[...currentData.messages],photos:[...currentData.photos],profiles:{...currentData.profiles}};
+  const body=new URLSearchParams();body.set('payload',JSON.stringify(payload));
+  // Apps Script redirects POST requests; no-cors avoids browser CORS rejection.
+  await fetch(API_URL,{method:'POST',mode:'no-cors',body});
+  // Verify the write through the JSONP read endpoint because no-cors responses are opaque.
+  for(let attempt=0;attempt<12;attempt++){
+    await new Promise(resolve=>setTimeout(resolve,900));
+    const latest=await getData();currentData=latest;renderGallery();renderProfiles();renderMessages();
+    if(actionApplied(payload,before,latest))return latest;
+  }
+  throw new Error('The request was sent, but the change has not appeared yet. Refresh and check before retrying.');
+}
+async function imagePayload(file){
+  if(!file||!file.type.startsWith('image/'))throw new Error('Please select an image file.');
+  if(file.size>15*1024*1024)throw new Error('Please choose an image smaller than 15 MB.');
+  if(!('createImageBitmap' in window))throw new Error('This browser cannot process the selected image. Try a recent version of Chrome or Edge.');
+  const bitmap=await createImageBitmap(file);
+  const scale=Math.min(1,1600/Math.max(bitmap.width,bitmap.height));
+  const canvas=document.createElement('canvas');canvas.width=Math.max(1,Math.round(bitmap.width*scale));canvas.height=Math.max(1,Math.round(bitmap.height*scale));
+  const ctx=canvas.getContext('2d');ctx.fillStyle='#fdf5e5';ctx.fillRect(0,0,canvas.width,canvas.height);ctx.drawImage(bitmap,0,0,canvas.width,canvas.height);bitmap.close?.();
+  const blob=await new Promise(resolve=>canvas.toBlob(resolve,'image/jpeg',0.82));
+  if(!blob)throw new Error('Could not prepare this image. Please try another file.');
+  if(blob.size>4*1024*1024)throw new Error('The compressed image is still too large. Choose a smaller image.');
+  const base64=await new Promise((resolve,reject)=>{const reader=new FileReader();reader.onload=()=>resolve(String(reader.result).split(',')[1]);reader.onerror=()=>reject(new Error('Could not read this image.'));reader.readAsDataURL(blob);});
+  return {base64,mimeType:'image/jpeg'};
+}
+window.uploadMemories=async input=>{
+  const files=[...input.files];if(!files.length)return;
+  try{
+    if(!requireAPI())return;
+    for(let i=0;i<files.length;i++){
+      setStatus('gallery-status',`Preparing photo ${i+1} of ${files.length}…`);
+      const image=await imagePayload(files[i]);
+      setStatus('gallery-status',`Uploading photo ${i+1} of ${files.length}…`);
+      await postData({action:'uploadMemory',...image,name:files[i].name});
+    }
+    setStatus('gallery-status','Your photos have been added ♡','ok');
+  }catch(e){setStatus('gallery-status',e.message,'error');}
+  finally{input.value='';}
+};
+async function deleteMemory(id){
+  if(!confirm('Remove this photo for everyone?'))return;
+  try{await postData({action:'deleteMemory',id});setStatus('gallery-status','Photo removed.','ok');}
+  catch(e){setStatus('gallery-status',e.message,'error');}
+}
+window.uploadProfile=async(key,input)=>{
+  const file=input.files?.[0];if(!file)return;
+  try{if(!requireAPI())return;setStatus('profile-status','Preparing profile photo…');const image=await imagePayload(file);setStatus('profile-status','Uploading profile photo…');await postData({action:'uploadProfile',key,...image});setStatus('profile-status','Profile photo updated.','ok');}
+  catch(e){setStatus('profile-status',e.message,'error');}
+  finally{input.value='';}
+};
+window.deleteProfile=async key=>{
+  if(!confirm('Remove this profile photo for everyone?'))return;
+  try{await postData({action:'deleteProfile',key});setStatus('profile-status','Profile photo removed.','ok');}
+  catch(e){setStatus('profile-status',e.message,'error');}
+};
+$('message-form').addEventListener('submit',async e=>{
+  e.preventDefault();const name=$('message-name').value.trim(),message=$('message-text').value.trim();if(!name||!message)return;
+  const btn=$('message-submit');btn.disabled=true;
+  try{
+    if(editingId){await postData({action:'updateMessage',id:editingId,name,message});editingId=null;closeEdit();}
+    else{await postData({action:'addMessage',name,message});$('message-name').value='';$('message-text').value='';}
+    setStatus('message-status','Your note has been saved ♡','ok');
+  }catch(err){setStatus('message-status',err.message,'error');}
+  finally{btn.disabled=false;}
+});
+window.openEdit=(id,data)=>{editingId=id;$('edit-name').value=data.name||'';$('edit-text').value=data.message||'';$('edit-modal').classList.add('open');$('edit-name').focus();};
+window.closeEdit=()=>{$('edit-modal').classList.remove('open');editingId=null;};
+window.saveEdit=async()=>{
+  if(!editingId)return;const name=$('edit-name').value.trim(),message=$('edit-text').value.trim();if(!name||!message)return;
+  try{await postData({action:'updateMessage',id:editingId,name,message});closeEdit();setStatus('message-status','Your changes have been saved.','ok');}
+  catch(e){setStatus('message-status',e.message,'error');}
+};
+async function deleteMessage(id){
+  if(!confirm('Delete this message for everyone?'))return;
+  try{await postData({action:'deleteMessage',id});setStatus('message-status','Message deleted.','ok');}
+  catch(e){setStatus('message-status',e.message,'error');}
+}
+if(API_READY){refreshData().catch(()=>{});setInterval(()=>refreshData(false).catch(()=>{}),30000);}
+else{
+  setStatus('gallery-status','Connect the Google Apps Script backend to enable shared photo uploads.','error');
+  setStatus('message-status','Connect the Google Apps Script backend to enable the shared message wall.','error');
+  setStatus('profile-status','Connect the Google Apps Script backend to enable shared profile photos.','error');
+  $('messages-list').innerHTML='<div class="empty">The shared message wall will appear here after Google Apps Script setup.</div>';
+}
+</script>
+</body>
+</html>
